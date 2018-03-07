@@ -1,0 +1,14 @@
+
+= form_with model: @article, local: true do |form|
+  %ul
+    - @article.errors.full_messages.each do |msg|
+      %li= msg
+  .form-group.row 
+    .col-sm-8.offset-sm-2
+      = form.text_field :title, class: 'form-control', placeholder: 'Title'
+  .form-group.row
+    .col-sm-8.offset-sm-2
+      = form.text_area :text, class: 'form-control', placeholder: 'Body'
+  .form-group.row
+    .col-sm-8.offset-sm-2
+      = form.submit 'SUBMIT', class: 'btn btn-primary'

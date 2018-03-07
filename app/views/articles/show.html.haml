@@ -1,0 +1,19 @@
+.row.mt-4
+  .col-sm-8.offset-sm-2
+    .card
+      .card-header= @article.title
+      .card-body
+        %p= @article.text
+      .card-footer
+        .float-right
+          = link_to 'Back', articles_path
+        .float-left
+          = link_to 'Edit', edit_article_path(@article)
+
+.row
+  .col-sm-8.offset-sm-2
+    = render @article.comments
+    .row
+  .col-sm-8.offset-sm-2
+    %h4 Add Comment:
+    = render 'comments/form'

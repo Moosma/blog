@@ -1,0 +1,10 @@
+.card
+  .card-body
+    = comment.body
+  .card-footer
+    .text-muted
+      = comment.commenter
+    .float-right
+      = link_to 'Delete', [comment.article, comment],
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' }
